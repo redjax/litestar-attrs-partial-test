@@ -7,9 +7,9 @@ from models.user import User
 import attrs
 
 
-@attrs.define()
+# @attrs.define()
 class UserController(Controller):
-    path: str = attrs.field(default="/users")
+    path: str = "/users"
 
     @post()
     async def create_user(self, data: User) -> User:

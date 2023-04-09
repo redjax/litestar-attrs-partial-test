@@ -18,6 +18,8 @@ python-multipart = "^0.0.6"
 stackprinter = "^0.2.10"
 attrs = "^22.2.0"
 uvicorn = "^0.21.1"
+sqlalchemy = "^2.0.9"
+aiosqlite = "^0.18.0"
 
 
 [tool.poetry.group.dev.dependencies]
