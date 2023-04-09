@@ -4,9 +4,9 @@ from __future__ import annotations
 ## Use TYPE_CHECKING to import modules that would create a circular reference
 from typing import TYPE_CHECKING
 
-#  i.e.:
-#  if TYPE_CHECKING:
-#    from module import script_that_imports_this_script
+## TYPE_CHECKING is False in the parser, so this will not run, but the parser will understand bar.Bar
+if TYPE_CHECKING:
+    from litestar.types import ASGIApp, Receive, Scope, Send
 
 import logging
 from litestar import Litestar, get, Request
@@ -18,10 +18,6 @@ from typing import Optional, Any, Dict, List, Union, cast
 from controllers.user import UserController
 
 from sqlalchemy.ext.asyncio import AsyncEngine, create_async_engine
-
-## TYPE_CHECKING is False in the parser, so this will not run, but the parser will understand bar.Bar
-if TYPE_CHECKING:
-    from litestar.types import ASGIApp, Receive, Scope, Send
 
 
 logger = logging.getLogger(__name__)

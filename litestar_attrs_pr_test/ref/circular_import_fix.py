@@ -8,9 +8,3 @@ from typing import TYPE_CHECKING
 if TYPE_CHECKING:
     ## Put imports here that would cause runtime exceptions for circular imports.
     ...
-
-from litestar import Litestar
-
-from controllers.user import UserController
-
-app = Litestar(route_handlers=[UserController])
